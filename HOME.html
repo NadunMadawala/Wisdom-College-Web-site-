@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <link rel="stylesheet" type="text/css" href="HOME.CSS">
+
+</head>
+
+<body>
+
+
+  <div id="header">
+
+    <nav>
+      <ul>
+        <li><a href="Payments.html">Payments</a></li>
+        <li><a href="Contact Us.html">Contact Us</a></li>
+        <li><a href="Announcements.html">Announcements</a></li>
+        <li><a href="Events.html">Events</a></li>
+        <li><a href="Courses.html">Courses</a></li>
+        <li><a href="About Us.html">About Us</a></li>
+        <li><a href="HOME.html"> Home</a></li>
+      </ul>
+
+
+      <h1>
+        <font color="#F8F8F8" size="+3" id="siteName"><b><img src="Images/logo/Wisdom-College-Logo-White.png" width="40"
+              height="40" alt="nameLogo" id="nameLogo"><span class="titleName"><span class="w">W</span><span
+                class="z">ISDOM</span> <span class="c">C</span><span class="z">OLLEGE </span></span></b></font>
+      </h1>
+
+    </nav>
+
+
+
+    <div> <img src="Images/logo/Wisdom-College-Logo-White.png" alt="homeImage" width="400" height="410"
+        class="homeImage" align="right">
+      <div id="btnApply"> <a href="Registration & Login.html"><span class="Apply">Wisdom Portal &#127891; </span></a>
+      </div>
+    </div>
+
+
+    <div class="animated-title">
+      <div class="text-top">
+        <div>
+          <span>Your</span>
+          <span>Progression is</span>
+        </div>
+      </div>
+      <div class="text-bottom">
+        <div>Your Future</div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <strong>Wisdom College </strong>is a welcoming community for students from Prep to Year 12 located in
+      kollupitiya,Colombo 03. We are a co-educational school providing personalised learning where each child is
+      supported to thrive in all aspects of their lives<span id="dots">...</span>
+      <span id="SeeMore">
+        At <strong> Wisdom College </strong>we believe that each child has their own unique gifts and talents and we
+        strive to provide them with an education centred around their individual needs. Our goal is to help every
+        student reach their full potential by providing a holistic education with compassionate and skilled teachers,
+        excellent resources and facilities, and an array of academic, cultural and pastoral
+        opportunities..</span><button onclick="myFunction()" id="myBtn"><b>See more</b></button>
+      <script>
+
+        function myFunction() {
+          var dots = document.getElementById("dots");
+          var moreText = document.getElementById("SeeMore");
+          var btnText = document.getElementById("myBtn");
+
+          if (dots.style.display === "none") {
+            dots.style.display = "inline";
+            btnText.innerHTML = "See More";
+            moreText.style.display = "none";
+          } else {
+            dots.style.display = "none";
+            btnText.innerHTML = "See less";
+            moreText.style.display = "inline";
+          }
+        }
+      </script>
+
+    </div>
+
+  </div>
+
+  <div id="mid">
+
+    <br><br>
+    <div id="titleCard1" class="titleCard1">
+      <b>LEARN </b><br><br>
+      We embrace learning and aspire to high academic standards. Our inclusive approach to learning means that all
+      students are welcomed at our school and supported with a well-rounded education.
+    </div><br><br>
+
+    <div id="titleCard2">
+      <b>ENQUIRE</b><br><br>
+      Choosing a school for your child is one of the most important decisions you will make. Discover more about Wisdom
+      College today!
+    </div><br><br><br><br><br><br><br><br><br><br><br>
+
+    <div id="titleCard3">
+      <b>Supportive Management and Teaching Staff</b><br><br>
+      Our management and teaching staff focused on building a strong community for Wisdom College and making the best
+      environment for our students.
+    </div><br><br>
+
+    <div id="titleCard4">
+      <b>ENROL</b><br><br>
+      Wisdom College provides a personalised experience where the unique needs and aspirations of each child is nurtured
+      to flourish both now and into their future.
+
+    </div>
+
+  </div>
+
+
+
+  <footer>
+
+    <div class="footerTitle">Quick Links
+      <hr class="titleLine">
+
+      <div class="fDetails">
+
+        <div id="leftbox">
+          <a href="HOME.html" class="fn"> Home</a> <br>
+          <a href="About Us.html" class="fn">About Us</a> <br>
+          <a href="Courses.html" class="fn">Courses</a> <br>
+          <a href="Events.html" class="fn">Events</a> <br>
+          <a href="Announcements.html" class="fn">Announcements</a> <br>
+          <a href="Contact Us.html" class="fn">Contact Us</a> <br>
+          <a href="Payments.html" class="fn">Payments</a>
+        </div>
+
+        <div id="middlebox">
+          <div class="content">
+            <div class="left-side">
+              <div class="address details">
+                <i class="fas fa-map-marker-alt"></i>
+                <div class="topic">Address</div>
+                <div class="text-one">No28/1, Kollupitiya</div>
+                <div class="text-two">Colombo 03</div>
+              </div>
+              <div class="phone details">
+                <i class="fas fa-phone-alt"></i>
+                <div class="topic">Phone</div>
+                <div class="text-one">+94 74 116 5342</div>
+                <div class="text-two">+94 77 100 0000</div>
+              </div>
+              <div class="email details">
+                <i class="fas fa-envelope"></i>
+                <div class="topic">Email</div>
+                <div class="text-one">nmadawala96@gmail.com</div>
+                <div class="text-two">nmadawal@yahoo.com</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div id="rightbox">
+          <a href="Registration & Login.html"><img src="Images/logo/Wisdom-College-Logo-White.png" width="100"
+              height="100" alt="fLogo" id="footerLogo"></a>
+        </div>
+
+      </div>
+    </div>
+
+  </footer>
+
+
+
+</body>
+
+</html>

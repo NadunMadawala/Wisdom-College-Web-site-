@@ -1,0 +1,645 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Registration & Login</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #header {
+      width: 200;
+      height: 100vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url("Images/Discover_1.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    .login-box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 400px;
+      padding: 40px;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(#006992, #2E1760);
+      box-sizing: border-box;
+      box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+      border-radius: 10px;
+    }
+
+    .login-box h2 {
+      margin: 0 0 30px;
+      padding: 0;
+      color: #fff;
+      text-align: center;
+    }
+
+    .login-box .user-box {
+      position: relative;
+    }
+
+    .login-box .user-box input {
+      width: 100%;
+      padding: 10px 0;
+      font-size: 16px;
+      color: #fff;
+      margin-bottom: 30px;
+      border: none;
+      border-bottom: 1px solid #fff;
+      outline: none;
+      background: transparent;
+    }
+
+    .login-box .user-box label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 10px 0;
+      font-size: 16px;
+      color: #fff;
+      pointer-events: none;
+      transition: .5s;
+    }
+
+    .login-box .user-box input:focus~label,
+    .login-box .user-box input:valid~label {
+      top: -20px;
+      left: 0;
+      color: #03e9f4;
+      font-size: 12px;
+    }
+
+    .login-box form a {
+      position: relative;
+      display: inline-block;
+      padding: 10px 20px;
+      color: #03e9f4;
+      font-size: 16px;
+      text-decoration: none;
+
+      overflow: hidden;
+      transition: .5s;
+      margin-top: 40px;
+      letter-spacing: 4px;
+
+    }
+
+    .login-box a:hover {
+      background: #03e9f4;
+      color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 5px #03e9f4,
+        0 0 25px #03e9f4,
+        0 0 50px #03e9f4,
+        0 0 100px #03e9f4;
+    }
+
+    .login-box a span {
+      position: absolute;
+      display: block;
+    }
+
+    .login-box a span:nth-child(1) {
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #03e9f4);
+      animation: btn-anim1 1s linear infinite;
+    }
+
+    @keyframes btn-anim1 {
+      0% {
+        left: -100%;
+      }
+
+      50%,
+      100% {
+        left: 100%;
+      }
+    }
+
+    .login-box a span:nth-child(2) {
+      top: -100%;
+      right: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(180deg, transparent, #03e9f4);
+      animation: btn-anim2 1s linear infinite;
+      animation-delay: .25s
+    }
+
+    @keyframes btn-anim2 {
+      0% {
+        top: -100%;
+      }
+
+      50%,
+      100% {
+        top: 100%;
+      }
+    }
+
+    .login-box a span:nth-child(3) {
+      bottom: 0;
+      right: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(270deg, transparent, #03e9f4);
+      animation: btn-anim3 1s linear infinite;
+      animation-delay: .5s
+    }
+
+    @keyframes btn-anim3 {
+      0% {
+        right: -100%;
+      }
+
+      50%,
+      100% {
+        right: 100%;
+      }
+    }
+
+    .login-box a span:nth-child(4) {
+      bottom: -100%;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(360deg, transparent, #03e9f4);
+      animation: btn-anim4 1s linear infinite;
+      animation-delay: .75s
+    }
+
+    @keyframes btn-anim4 {
+      0% {
+        bottom: -100%;
+      }
+
+      50%,
+      100% {
+        bottom: 100%;
+      }
+    }
+
+
+    a {
+      text-decoration: none;
+
+    }
+
+    .titleName {
+      outline-width: thick;
+      outline-color: aqua;
+      text-emphasis-position: left;
+    }
+
+    #nameLogo {
+      border: solid 4px;
+      color: rgba(225, 44, 0, 0.4);
+    }
+
+    .w {
+      font-size: 60px;
+
+      -webkit-text-stroke: 4px rgba(225, 44, 0, 0.4)
+    }
+
+    .c {
+      font-size: 60px;
+      -webkit-text-stroke: 4px rgba(225, 44, 0, 0.4)
+    }
+
+    .z {
+      -webkit-text-stroke: 2px rgba(225, 44, 0, 0.4)
+    }
+
+    nav {
+      width: 1272px;
+      height: 50px;
+      background-color: transparent;
+      line-height: 50px;
+      position: absolute;
+      left: 10px;
+      top: 27px;
+
+    }
+
+    nav ul li {
+      float: right;
+      margin: 10px;
+      border-radius: 30px;
+
+      background-color: rgba(225, 44, 0, 0.4);
+      margin-right: 5px;
+      list-style: none;
+
+
+
+    }
+
+    nav ul li:hover {
+      display: inline;
+      background-color: #000000;
+      text-overflow: ellipsis;
+      transition: 0.7s;
+      border: solid;
+      border-color: aliceblue;
+    }
+
+
+    nav ul li a {
+      text-decoration: bold;
+      color: #fff;
+      padding: 15px;
+
+    }
+
+    #mid {
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: scroll;
+      background: linear-gradient(#171738, #2E1760);
+      padding-bottom: 200vh;
+
+
+
+
+    }
+
+    .regtitle {
+      color: #fff;
+      border: dashed;
+      padding: 10px;
+
+
+    }
+
+    .Register-box {
+      position: absolute;
+      top: 900px;
+      left: 814px;
+      width: 1000px;
+      padding: 40px;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(#006992, #2E1760);
+      box-sizing: border-box;
+      box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+      border-radius: 10px;
+      margin-top: 600px;
+      height: 1150px;
+
+    }
+
+    .Register-box h2 {
+      margin: 0 0 30px;
+      padding: 0;
+      color: #fff;
+      text-align: center;
+
+    }
+
+    .Register-box .user-box {
+      position: relative;
+
+    }
+
+
+    /* Add padding to containers */
+    .container {
+      padding: 16px;
+      border-radius: 10px;
+      color: #fff;
+    }
+
+    /* Full-width input fields */
+    input[type=text],
+    input[type=password] {
+      width: 75%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      display: inline-block;
+      border: none;
+
+
+    }
+
+    input[type=text]:focus,
+    input[type=password]:focus {
+
+      outline: none;
+    }
+
+    /* Overwrite default styles of hr */
+    hr {
+      border: 1px solid #f1f1f1;
+      margin-bottom: 25px;
+    }
+
+    /* Set a style for the submit button */
+    .Register-box form a {
+      position: relative;
+      display: inline-block;
+      padding: 10px 20px;
+      color: #03e9f4;
+      font-size: 16px;
+      text-decoration: none;
+
+      overflow: hidden;
+      transition: .5s;
+      margin-top: 40px;
+      letter-spacing: 4px;
+
+    }
+
+    .Register-box a:hover {
+      background: #03e9f4;
+      color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 5px #03e9f4,
+        0 0 25px #03e9f4,
+        0 0 50px #03e9f4,
+        0 0 100px #03e9f4;
+    }
+
+    .Register-box a span {
+      position: absolute;
+      display: inline;
+    }
+
+    .Register-box a span:nth-child(1) {
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #03e9f4);
+      animation: btn-anim1 1s linear infinite;
+    }
+
+    @keyframes btn-anim1 {
+      0% {
+        left: -100%;
+      }
+
+      50%,
+      100% {
+        left: 100%;
+      }
+    }
+
+    .Register-box a span:nth-child(2) {
+      top: -100%;
+      right: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(180deg, transparent, #03e9f4);
+      animation: btn-anim2 1s linear infinite;
+      animation-delay: .25s
+    }
+
+    @keyframes btn-anim2 {
+      0% {
+        top: -100%;
+      }
+
+      50%,
+      100% {
+        top: 100%;
+      }
+    }
+
+    .Register-box a span:nth-child(3) {
+      bottom: 0;
+      right: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(270deg, transparent, #03e9f4);
+      animation: btn-anim3 1s linear infinite;
+      animation-delay: .5s
+    }
+
+    @keyframes btn-anim3 {
+      0% {
+        right: -100%;
+      }
+
+      50%,
+      100% {
+        right: 100%;
+      }
+    }
+
+    .Register-box a span:nth-child(4) {
+      bottom: -100%;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(360deg, transparent, #03e9f4);
+      animation: btn-anim4 1s linear infinite;
+      animation-delay: .75s
+    }
+
+    @keyframes btn-anim4 {
+      0% {
+        bottom: -100%;
+      }
+
+      50%,
+      100% {
+        bottom: 100%;
+      }
+    }
+
+
+
+
+    /* Set a grey background color and center the text of the "sign in" section */
+    .signin {
+
+      text-align: center;
+    }
+
+    #age {
+      width: 60px;
+      border-radius: 25px;
+    }
+
+    #ContactNumber {
+      width: 200px;
+      border-radius: 25px;
+    }
+
+    #UserName {
+      width: 350px;
+      border-radius: 25px;
+    }
+
+    #psw {
+      width: 350px;
+      border-radius: 25px;
+    }
+
+    #psw-repeat {
+      width: 350px;
+      border-radius: 25px;
+    }
+
+    #birthday {
+      border-radius: 25px;
+    }
+
+    #FullName {
+      border-radius: 25px;
+    }
+
+    #email {
+      border-radius: 25px;
+      width: 400px;
+    }
+
+    #address {
+      border-radius: 25px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="header">
+    <nav>
+      <ul>
+        <li><a href="Payments.html">Payments</a></li>
+        <li><a href="Contact Us.html">Contact Us</a></li>
+        <li><a href="Announcements.html">Announcements</a></li>
+        <li><a href="Events.html">Events</a></li>
+        <li><a href="Courses.html">Courses</a></li>
+        <li><a href="About Us.html">About Us</a></li>
+        <li><a href="HOME.html"> Home</a></li>
+      </ul>
+
+
+      <h1>
+        <font color="#F8F8F8" size="+3" id="siteName"><b><img src="Images/logo/Wisdom-College-Logo-White.png" width="50"
+              height="50" alt="nameLogo" id="nameLogo"><span class="titleName"><span class="w">W</span><span
+                class="z">ISDOM</span> <span class="c">C</span><span class="z">OLLEGE</span></span></b></font>
+      </h1>
+
+    </nav>
+
+    <div class="login-box">
+      <h2>Login</h2>
+      <form method="post" action="file:///C|/wamp64/www/WAD project web site/Courses.html">
+        <div class="user-box">
+          <input type="text" name="text" required="">
+          <label>Username</label>
+        </div>
+        <br>
+        <div class="user-box">
+          <input type="password" name="password" required>
+          <label>Password</label>
+        </div>
+
+        <a href="#">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Login
+        </a>
+
+
+
+        <div class="regtitle"><strong>*If you are a new student fill the below form and Register for Login.</strong>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="mid">
+    <div class="Register-box">
+      <h2>Register</h2>
+
+
+      <form action="/action_page.php" method="post">
+        <div class="container">
+
+          <br>
+          <hr>
+
+          <label for="FullName"><b>Full Name</b></label>
+          <br>
+          <input type="text" placeholder="Enter Full Name" name="FullName" id="FullName" required>
+          <br>
+
+          <label for="adress"><b>Address</b></label>
+          <br>
+          <input type="text" placeholder="Enter Address" name="address" id="address" required>
+          <br>
+
+          <label for="email"><b>Email</b></label>
+          <br>
+          <input type="text" placeholder="Enter Email" name="email" id="email" required>
+          <br>
+
+          <label for="userName"><b>User Name</b></label>
+          <br>
+          <input type="text" placeholder="Enter User Name" name="UserName" id="UserName" required>
+          <br>
+
+          <label for="psw"><b>Password</b></label> <br>
+          <input type="password" placeholder="Enter Password" name="psw" id="psw" required> <br>
+
+          <label for="psw-repeat"><b>Repeat Password</b></label> <br>
+          <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required> <br>
+
+          <label for="birthday"><b>Birthday</b></label> &nbsp;&nbsp;
+          <input type="date" id="birthday" name="birthday"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+          <label for="age"><b>Age</b></label> &nbsp;&nbsp;
+          <input type="text" placeholder="Enter Age" id="age" name="Age">
+
+          <br>
+
+          <label for="ConNum"><b>Contact Number</b></label> <br>
+          <input type="text" placeholder="Enter Contact Number" name="ContactNumber" id="ContactNumber" required> <br>
+
+          <p><b>Who are you?</b></p><br>
+            <input type="radio" id="student" name="fav_language" value="Student">
+            <label for="Student">Student</label><br>
+            <input type="radio" id="teacher" name="fav_language" value="Teacher">
+            <label for="Teacher">Teacher</label><br>
+            <input type="radio" id="managemnet" name="fav_language" value="Management">
+            <label for="Management">Management</label>
+          <br><br>
+          <input type="checkbox" id="ReceiveMsg" name="ReceiveMsg" value="ReceiveMsg" required>
+          <label for="ReceiveMsg"> &nbsp;<b>E-mail me new updates</b></label>
+
+          <br> <br>
+          <hr>
+
+          <a href="#" id="btnSubmit">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Register
+          </a>
+
+        </div>
+
+
+
+
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
